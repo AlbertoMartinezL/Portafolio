@@ -18,13 +18,13 @@ Los pull requests corren los tests pero nunca despliegan.
 ## Configuración inicial (una sola vez)
 
 ### 1. Repositorio en GitHub
-Crea un repositorio nuevo (p. ej. `portfolio`) en https://github.com/new y sube el proyecto:
+Crea un repositorio nuevo (`Portafolio`) en https://github.com/new y sube el proyecto:
 ```bash
 cd Portfolio
 git init -b main
 git add .
 git commit -m "Portafolio inicial"
-git remote add origin https://github.com/AlbertoMartinezL/portfolio.git
+git remote add origin https://github.com/AlbertoMartinezL/Portafolio.git
 git push -u origin main
 ```
 El primer push correrá los tests; el job de despliegue fallará hasta completar los pasos 2–5 (es normal).
@@ -47,8 +47,8 @@ Comprueba la propagación con `nslookup albertoengineer.com` (puede tardar de mi
 ### 4. Preparar el servidor
 ```bash
 ssh root@IP_DEL_VPS
-curl -fsSL https://raw.githubusercontent.com/AlbertoMartinezL/portfolio/main/deploy/setup-server.sh -o setup.sh
-bash setup.sh https://github.com/AlbertoMartinezL/portfolio.git
+curl -fsSL https://raw.githubusercontent.com/AlbertoMartinezL/Portafolio/main/deploy/setup-server.sh -o setup.sh
+bash setup.sh https://github.com/AlbertoMartinezL/Portafolio.git
 ```
 Instala Docker, crea el usuario `deploy`, activa el firewall y clona el repo.
 (Si el repo es **privado**, el clon necesita una *deploy key* de solo lectura: GitHub → Settings → Deploy keys.)
