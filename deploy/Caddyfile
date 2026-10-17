@@ -1,0 +1,10 @@
+# Caddy obtiene y renueva los certificados HTTPS de Let's Encrypt automáticamente.
+
+www.albertoengineer.com {
+	redir https://albertoengineer.com{uri} permanent
+}
+
+albertoengineer.com {
+	encode gzip zstd
+	reverse_proxy frontend:80
+}

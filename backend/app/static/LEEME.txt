@@ -1,0 +1,2 @@
+Coloca aqui tu foto de perfil con el nombre foto.jpg
+(o cambia "avatar_url" en data/profile.json si usas otro nombre, p. ej. /api/static/foto.png)

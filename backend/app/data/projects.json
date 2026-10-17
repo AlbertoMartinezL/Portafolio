@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "pipeline-autos-pyspark",
+    "title": "Pipeline de datos de autos con PySpark",
+    "summary": "ETL distribuido que limpia y agrega datos de vehículos para análisis.",
+    "description": "Pipeline que ingiere datasets de autos, aplica limpieza, normalización y agregaciones con PySpark, y publica tablas listas para BI.",
+    "category": "Data Engineering",
+    "tags": ["PySpark", "ETL", "Python"],
+    "featured": true,
+    "repo_url": "https://github.com/tu-usuario/pyspark-cars",
+    "demo_url": null,
+    "image_url": null,
+    "highlights": ["Particionado por año y marca", "Validación de calidad de datos"],
+    "metrics": { "Registros": "1M+", "Tiempo": "-60%" }
+  },
+  {
+    "slug": "orquestacion-airflow",
+    "title": "Orquestación de ETL con Airflow",
+    "summary": "DAGs para extracción, transformación y carga programada.",
+    "description": "Conjunto de DAGs en Apache Airflow con dependencias, reintentos, sensores y monitoreo, desplegados con Docker.",
+    "category": "Data Engineering",
+    "tags": ["Airflow", "Docker", "ETL"],
+    "featured": true,
+    "repo_url": "https://github.com/tu-usuario/airflow-etl",
+    "demo_url": null,
+    "image_url": null,
+    "highlights": ["DAGs parametrizados", "Alertas por correo"],
+    "metrics": {}
+  },
+  {
+    "slug": "scraper-scrapy",
+    "title": "Web scraping a escala con Scrapy",
+    "summary": "Spiders que recolectan datos públicos y los almacenan estructurados.",
+    "description": "Proyecto de Scrapy con pipelines de limpieza, deduplicación y exportación a base de datos.",
+    "category": "Data Engineering",
+    "tags": ["Scrapy", "Python", "Web Scraping"],
+    "featured": false,
+    "repo_url": "https://github.com/tu-usuario/scrapy-project",
+    "demo_url": null,
+    "image_url": null,
+    "highlights": [],
+    "metrics": {}
+  },
+  {
+    "slug": "asistente-rag",
+    "title": "Asistente RAG sobre documentos",
+    "summary": "Chatbot que responde preguntas sobre documentos usando LLMs y búsqueda vectorial.",
+    "description": "Sistema de Retrieval-Augmented Generation: ingesta de documentos, embeddings, base vectorial y API en FastAPI.",
+    "category": "GenAI",
+    "tags": ["LLM", "RAG", "FastAPI", "Python"],
+    "featured": true,
+    "repo_url": "https://github.com/tu-usuario/rag-assistant",
+    "demo_url": null,
+    "image_url": null,
+    "highlights": ["Citas a la fuente", "Evaluación de respuestas"],
+    "metrics": {}
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "company": "QUALTOP",
+    "role": "Ingeniero de Datos",
+    "start": "Ene 2026",
+    "end": null,
+    "description": "Desarrollo de arquitecturas de datos escalables para el procesamiento masivo de información bancaria, liderando ciclos completos de ingesta, transformación, validación y limpieza en entornos de Big Data.",
+    "highlights": [
+      "Lidero un equipo en el desarrollo de procedimientos almacenados (SPs) en Vertica SQL para la ejecución de procesos críticos.",
+      "Garantizo la cuantificación precisa y la disponibilidad de los datos bajo altos estándares de eficiencia."
+    ],
+    "stack": ["Vertica SQL", "Python", "Big Data"]
+  },
+  {
+    "company": "NTT DATA",
+    "role": "Ingeniero de Datos",
+    "start": "Dic 2024",
+    "end": "Ago 2025",
+    "description": "Optimización de procesos de datos en producción sobre Google Cloud Platform.",
+    "highlights": [
+      "Analicé vistas y tablas SQL en producción y propuse soluciones para reducir tiempos de procesamiento y costos en GCP.",
+      "Diseñé y desarrollé procesos ETL robustos para la alimentación automatizada de tablas.",
+      "Desarrollé procedimientos almacenados que mejoraron la eficiencia de las consultas SQL hasta en 50%."
+    ],
+    "stack": ["GCP", "BigQuery", "SQL", "ETL"]
+  },
+  {
+    "company": "NTT DATA",
+    "role": "Ingeniero de Datos",
+    "start": "Ene 2024",
+    "end": "Nov 2024",
+    "description": "Migración de la plataforma SAS Enterprise a un nuevo servidor GNU/Linux.",
+    "highlights": [
+      "Elaboré la documentación técnica que definió los recursos de hardware y software para la migración.",
+      "Instalé y configuré SAS Enterprise, y actualicé y optimicé los scripts SAS a la nueva versión."
+    ],
+    "stack": ["SAS", "Linux", "Bash"]
+  },
+  {
+    "company": "NTT DATA",
+    "role": "Ingeniero de Datos Jr",
+    "start": "Mar 2023",
+    "end": "Dic 2023",
+    "description": "Construcción de pipelines para datos bancarios y su publicación para análisis.",
+    "highlights": [
+      "Desarrollé pipelines ETL/ELT en PySpark para la ingesta, limpieza y transformación de datos bancarios.",
+      "Implementé una base de datos en AWS RDS para que los datos se consumieran desde Power BI.",
+      "Aseguré la calidad e integración de los datos antes de su carga a tablas de producción."
+    ],
+    "stack": ["PySpark", "AWS RDS", "Power BI", "Python"]
+  }
+]

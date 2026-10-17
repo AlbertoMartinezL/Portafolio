@@ -1,0 +1,39 @@
+# Producción (VPS): Caddy (HTTPS automático) -> frontend (Nginx) -> backend (FastAPI)
+# Uso: docker compose -f docker-compose.prod.yml up -d --build
+services:
+  backend:
+    build: ./backend
+    environment:
+      APP_NAME: Portfolio API
+      ENVIRONMENT: production
+      CORS_ORIGINS: '["https://albertoengineer.com","https://www.albertoengineer.com"]'
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+
+  caddy:
+    image: caddy:2.8-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data # certificados SSL (no borrar)
+      - caddy_config:/config
+    depends_on:
+      - frontend
+
+volumes:
+  caddy_data:
+  caddy_config:

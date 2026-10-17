@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.env
+# Node
+node_modules/
+dist/
+# graphify: se versiona el grafo, no la caché ni archivos locales
+graphify-out/cache/
+graphify-out/.graphify_*
+graphify-out/cost.json
+# Editor / SO
+.vscode/
+.DS_Store

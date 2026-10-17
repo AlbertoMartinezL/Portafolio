@@ -1,0 +1,83 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: # permite desplegar manualmente desde la pestaña Actions
+
+# Evita dos despliegues simultáneos; si llega un push nuevo, cancela el anterior
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Tests backend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+      - run: pip install -r requirements.txt
+      - run: pytest -q
+
+  frontend:
+    name: Build frontend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run build # incluye chequeo de tipos (tsc)
+
+  deploy:
+    name: Desplegar en VPS
+    needs: [backend, frontend]
+    # Solo despliega en push a main (o manual), nunca en pull requests
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://albertoengineer.com
+    steps:
+      - name: Configurar llave SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ secrets.VPS_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
+      - name: Actualizar código y reconstruir contenedores
+        run: |
+          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+            set -e
+            cd ~/portfolio
+            git fetch origin main
+            git reset --hard origin/main
+            docker compose -f docker-compose.prod.yml up -d --build --remove-orphans
+            docker image prune -f
+          EOF
+
+      - name: Verificar que el sitio responde
+        run: |
+          for i in $(seq 1 10); do
+            if curl -fsS https://albertoengineer.com/api/health; then exit 0; fi
+            echo "Intento $i: aún no responde, reintentando en 6 s..."
+            sleep 6
+          done
+          echo "El sitio no respondió después del despliegue" && exit 1

@@ -1,0 +1,6 @@
+# Scripts y configs que se ejecutan en Linux deben tener finales de línea LF
+* text=auto
+*.sh text eol=lf
+Caddyfile text eol=lf
+*.yml text eol=lf
+*.conf text eol=lf

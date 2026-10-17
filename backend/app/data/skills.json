@@ -1,0 +1,8 @@
+[
+  { "category": "Lenguajes", "items": ["Python", "SQL", "Vertica SQL", "SAS", "Bash"] },
+  { "category": "Ingeniería de Datos", "items": ["PySpark", "Apache Airflow", "ETL / ELT", "Procedimientos almacenados"] },
+  { "category": "Análisis de datos", "items": ["Pandas", "NumPy", "Matplotlib", "Jupyter", "Power BI"] },
+  { "category": "Cloud", "items": ["GCP", "BigQuery", "Cloud Storage", "AWS RDS"] },
+  { "category": "Herramientas", "items": ["Git", "GitHub", "Bitbucket", "Linux", "Docker"] },
+  { "category": "Metodologías", "items": ["Scrum", "Jira"] }
+]
