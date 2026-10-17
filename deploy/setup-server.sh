@@ -23,8 +23,16 @@ fi
 
 echo "==> Instalando Docker"
 if ! command -v docker >/dev/null; then
-  curl -fsSL https://get.docker.com | sh
+  # El instalador oficial no soporta versiones de Ubuntu recién salidas;
+  # en ese caso se usan los paquetes de Docker de los repositorios de Ubuntu.
+  if ! curl -fsSL https://get.docker.com | sh; then
+    echo "==> Instalador oficial no disponible para esta versión; usando paquetes de Ubuntu"
+    apt-get install -y docker.io docker-compose-v2
+    apt-get install -y docker-buildx || echo "(docker-buildx no disponible; se usará el builder clásico)"
+  fi
 fi
+systemctl enable --now docker
+docker compose version
 
 echo "==> Creando usuario '$DEPLOY_USER' (lo usa GitHub Actions para desplegar)"
 if ! id "$DEPLOY_USER" >/dev/null 2>&1; then

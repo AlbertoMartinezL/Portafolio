@@ -54,6 +54,7 @@ Comprueba la propagación con `nslookup albertoengineer.com` (puede tardar de mi
 ### 4. Preparar el servidor
 ```bash
 # desde la terminal SSH de la consola de GCP
+sudo apt-get update && sudo apt-get install -y curl   # las imágenes "minimal" pueden no traer curl
 curl -fsSL https://raw.githubusercontent.com/AlbertoMartinezL/Portafolio/main/deploy/setup-server.sh -o setup.sh
 sudo bash setup.sh https://github.com/AlbertoMartinezL/Portafolio.git
 ```
