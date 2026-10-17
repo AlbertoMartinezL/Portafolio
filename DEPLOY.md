@@ -29,9 +29,16 @@ git push -u origin main
 ```
 El primer push correrá los tests; el job de despliegue fallará hasta completar los pasos 2–5 (es normal).
 
-### 2. Contratar el VPS
-Ubuntu 24.04, 1 vCPU / 1–2 GB RAM es suficiente (Hetzner CX22, DigitalOcean Basic, etc.).
-Anota la **IP pública**.
+### 2. Servidor en Google Compute Engine
+Una VM con Ubuntu 22.04/24.04 o Debian 12 y 1–2 GB de RAM es suficiente (`e2-micro` o `e2-small`).
+En la consola de GCP revisa tres cosas:
+
+1. **IP estática** — VPC network → *IP addresses* → en la IP externa de la VM, **Reserve / Promote to static**.
+   Sin esto la IP cambia si la VM se reinicia y el dominio deja de funcionar.
+2. **Firewall** — Compute Engine → VM → *Edit* → marca **Allow HTTP traffic** y **Allow HTTPS traffic**.
+3. **Acceso SSH** — en GCE no se entra como `root`: usa el botón **SSH** de la consola (o `gcloud compute ssh`) y ejecuta con `sudo`.
+
+Anota la **IP externa estática**.
 
 ### 3. DNS en GoDaddy
 GoDaddy → Mis productos → `albertoengineer.com` → **DNS** → Registros:
@@ -46,11 +53,11 @@ Comprueba la propagación con `nslookup albertoengineer.com` (puede tardar de mi
 
 ### 4. Preparar el servidor
 ```bash
-ssh root@IP_DEL_VPS
+# desde la terminal SSH de la consola de GCP
 curl -fsSL https://raw.githubusercontent.com/AlbertoMartinezL/Portafolio/main/deploy/setup-server.sh -o setup.sh
-bash setup.sh https://github.com/AlbertoMartinezL/Portafolio.git
+sudo bash setup.sh https://github.com/AlbertoMartinezL/Portafolio.git
 ```
-Instala Docker, crea el usuario `deploy`, activa el firewall y clona el repo.
+Instala Docker, agrega 2 GB de swap, crea el usuario `deploy`, activa el firewall local y clona el repo.
 (Si el repo es **privado**, el clon necesita una *deploy key* de solo lectura: GitHub → Settings → Deploy keys.)
 
 ### 5. Llave SSH para GitHub Actions

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Preparación inicial del VPS (Ubuntu 24.04). Se ejecuta UNA sola vez, como root:
+# Preparación inicial del servidor (Ubuntu 22.04/24.04 o Debian 12, p. ej. Google Compute Engine).
+# Se ejecuta UNA sola vez con sudo:
 #   curl -fsSL https://raw.githubusercontent.com/<usuario>/<repo>/main/deploy/setup-server.sh -o setup.sh
 #   sudo bash setup.sh https://github.com/<usuario>/<repo>.git
 set -euo pipefail
@@ -9,6 +10,16 @@ DEPLOY_USER="deploy"
 
 echo "==> Actualizando paquetes"
 apt-get update -y && apt-get upgrade -y
+apt-get install -y git curl ufw
+
+echo "==> Swap de 2 GB (evita que el build del frontend se quede sin memoria en máquinas de 1 GB)"
+if ! swapon --show | grep -q /swapfile; then
+  fallocate -l 2G /swapfile
+  chmod 600 /swapfile
+  mkswap /swapfile
+  swapon /swapfile
+  echo '/swapfile none swap sw 0 0' >> /etc/fstab
+fi
 
 echo "==> Instalando Docker"
 if ! command -v docker >/dev/null; then
@@ -26,7 +37,7 @@ touch /home/$DEPLOY_USER/.ssh/authorized_keys
 chmod 600 /home/$DEPLOY_USER/.ssh/authorized_keys
 chown -R $DEPLOY_USER:$DEPLOY_USER /home/$DEPLOY_USER/.ssh
 
-echo "==> Firewall: solo SSH, HTTP y HTTPS"
+echo "==> Firewall local: solo SSH, HTTP y HTTPS (en GCP también hay que permitir HTTP/HTTPS en la consola)"
 ufw allow OpenSSH
 ufw allow 80/tcp
 ufw allow 443/tcp
