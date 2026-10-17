@@ -11,6 +11,8 @@ dist/
 graphify-out/cache/
 graphify-out/.graphify_*
 graphify-out/cost.json
+# Notas personales (no se publican)
+PENDIENTES.md
 # Editor / SO
 .vscode/
 .DS_Store
