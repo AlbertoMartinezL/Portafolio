@@ -1,8 +1,68 @@
 [
-  { "category": "Lenguajes", "items": ["Python", "SQL", "Vertica SQL", "SAS", "Bash"] },
-  { "category": "Ingeniería de Datos", "items": ["PySpark", "Apache Airflow", "ETL / ELT", "Procedimientos almacenados"] },
-  { "category": "Análisis de datos", "items": ["Pandas", "NumPy", "Matplotlib", "Jupyter", "Power BI"] },
-  { "category": "Cloud", "items": ["GCP", "BigQuery", "Cloud Storage", "AWS RDS"] },
-  { "category": "Herramientas", "items": ["Git", "GitHub", "Bitbucket", "Linux", "Docker"] },
-  { "category": "Metodologías", "items": ["Scrum", "Jira"] }
+  {
+    "category": "Lenguajes y análisis",
+    "items": [
+      "Python",
+      "SQL",
+      "PySpark",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Web scraping",
+      "Bash"
+    ]
+  },
+  {
+    "category": "Bases de datos",
+    "items": [
+      "Vertica",
+      "MySQL",
+      "PostgreSQL",
+      "AWS RDS",
+      "BigQuery"
+    ]
+  },
+  {
+    "category": "Orquestación y monitoreo",
+    "items": [
+      "Control-M",
+      "Apache Airflow"
+    ]
+  },
+  {
+    "category": "Cloud",
+    "items": [
+      "GCP",
+      "BigQuery",
+      "Cloud Storage",
+      "AWS"
+    ]
+  },
+  {
+    "category": "Herramientas",
+    "items": [
+      "Git",
+      "GitHub",
+      "Bitbucket",
+      "Linux",
+      "SAS",
+      "Jupyter",
+      "Power BI",
+      "Docker"
+    ]
+  },
+  {
+    "category": "Metodologías",
+    "items": [
+      "Scrum",
+      "Jira"
+    ]
+  },
+  {
+    "category": "IA aplicada",
+    "items": [
+      "Claude",
+      "Kiro CLI"
+    ]
+  }
 ]

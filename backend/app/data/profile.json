@@ -1,18 +1,24 @@
 {
   "name": "Alberto Antonio Martínez López",
   "title": "Ingeniero de Datos e IA",
-  "tagline": "Más de 3 años construyendo y optimizando pipelines de Big Data para el sector bancario, en GCP y AWS.",
+  "tagline": "Más de 3 años construyendo y optimizando pipelines de Big Data para el sector bancario, con Vertica, PySpark, GCP y AWS.",
   "about": [
-    "Ingeniero en Computación por el IPN, con más de 3 años de experiencia en el ciclo de vida completo de soluciones de Big Data: ingesta, transformación, validación y carga de datos.",
-    "Me especializo en desarrollar y optimizar pipelines ETL/ELT con Python, SQL y PySpark; mis mejoras han aumentado hasta 50% la eficiencia de consultas y reducido costos operativos en la nube.",
-    "Actualmente amplío mi perfil hacia la Inteligencia Artificial, integrando modelos y LLMs sobre plataformas de datos confiables."
+    "Ingeniero en Computación por el IPN, con más de 3 años de experiencia en el ciclo de vida completo de soluciones de Big Data, principalmente en el sector bancario: ingesta, transformación, validación y carga de datos.",
+    "Desarrollo y optimizo pipelines ETL/ELT, procedimientos almacenados en Vertica SQL y automatizaciones en Python, con monitoreo y orquestación en Control-M; mis mejoras han reducido hasta 50% los tiempos de respuesta de consultas y bajado costos operativos en la nube.",
+    "Uso herramientas de IA como Claude y Kiro CLI para acelerar el desarrollo y la automatización, y sigo ampliando mi perfil hacia la Inteligencia Artificial."
   ],
   "location": "Ciudad de México, México",
   "email": "otreblaantonio@gmail.com",
   "avatar_url": "/api/static/foto.png",
-  "cv_url": null,
+  "cv_url": "/api/static/cv.pdf",
   "socials": [
-    { "name": "GitHub", "url": "https://github.com/AlbertoMartinezL" },
-    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/alberto-antonio-martínez-lópez-38b0a4148" }
+    {
+      "name": "GitHub",
+      "url": "https://github.com/AlbertoMartinezL"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/alberto-antonio-martínez-lópez-38b0a4148"
+    }
   ]
 }

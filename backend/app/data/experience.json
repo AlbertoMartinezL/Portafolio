@@ -1,15 +1,25 @@
 [
   {
     "company": "QUALTOP",
-    "role": "Ingeniero de Datos",
+    "role": "Ingeniero de Datos (proyecto de banca)",
     "start": "Ene 2026",
     "end": null,
-    "description": "Desarrollo de arquitecturas de datos escalables para el procesamiento masivo de información bancaria, liderando ciclos completos de ingesta, transformación, validación y limpieza en entornos de Big Data.",
+    "description": "Desarrollo de arquitecturas de datos escalables para el procesamiento masivo de información bancaria, cubriendo ingesta, transformación, validación y limpieza en entornos de Big Data.",
     "highlights": [
-      "Lidero un equipo en el desarrollo de procedimientos almacenados (SPs) en Vertica SQL para la ejecución de procesos críticos.",
-      "Garantizo la cuantificación precisa y la disponibilidad de los datos bajo altos estándares de eficiencia."
+      "Desarrollo procedimientos almacenados (SPs) en Vertica SQL que insertan los datos en cada capa del pipeline, garantizando cuantificación precisa y disponibilidad de la información.",
+      "Soy miembro clave del equipo de desarrollo de SPs en Vertica SQL para la ejecución de procesos críticos.",
+      "Monitoreo diariamente el flujo de la información en Control-M, atiendo incidencias y levanto y configuro jobs en el ambiente de desarrollo.",
+      "Automaticé con Python actividades manuales que consumían mucho tiempo, reduciendo la carga operativa del equipo.",
+      "Desarrollé scripts de web scraping en Python para validar documentación repetitiva en una plataforma del banco, eliminando revisiones manuales.",
+      "Utilizo Claude y Kiro CLI como apoyo en el desarrollo, la documentación y la automatización de tareas."
     ],
-    "stack": ["Vertica SQL", "Python", "Big Data"]
+    "stack": [
+      "Vertica SQL",
+      "Control-M",
+      "Python",
+      "Web scraping",
+      "Big Data"
+    ]
   },
   {
     "company": "NTT DATA",
@@ -20,9 +30,14 @@
     "highlights": [
       "Analicé vistas y tablas SQL en producción y propuse soluciones para reducir tiempos de procesamiento y costos en GCP.",
       "Diseñé y desarrollé procesos ETL robustos para la alimentación automatizada de tablas.",
-      "Desarrollé procedimientos almacenados que mejoraron la eficiencia de las consultas SQL hasta en 50%."
+      "Desarrollé procedimientos almacenados que optimizaron el rendimiento de las consultas SQL, reduciendo tiempos de respuesta hasta en 50%."
     ],
-    "stack": ["GCP", "BigQuery", "SQL", "ETL"]
+    "stack": [
+      "GCP",
+      "BigQuery",
+      "SQL",
+      "ETL"
+    ]
   },
   {
     "company": "NTT DATA",
@@ -34,7 +49,11 @@
       "Elaboré la documentación técnica que definió los recursos de hardware y software para la migración.",
       "Instalé y configuré SAS Enterprise, y actualicé y optimicé los scripts SAS a la nueva versión."
     ],
-    "stack": ["SAS", "Linux", "Bash"]
+    "stack": [
+      "SAS",
+      "Linux",
+      "Bash"
+    ]
   },
   {
     "company": "NTT DATA",
@@ -45,8 +64,13 @@
     "highlights": [
       "Desarrollé pipelines ETL/ELT en PySpark para la ingesta, limpieza y transformación de datos bancarios.",
       "Implementé una base de datos en AWS RDS para que los datos se consumieran desde Power BI.",
-      "Aseguré la calidad e integración de los datos antes de su carga a tablas de producción."
+      "Garanticé la calidad e integración de los datos cargados en las tablas de producción."
     ],
-    "stack": ["PySpark", "AWS RDS", "Power BI", "Python"]
+    "stack": [
+      "PySpark",
+      "AWS RDS",
+      "Power BI",
+      "Python"
+    ]
   }
 ]

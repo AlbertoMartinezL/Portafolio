@@ -8,11 +8,17 @@
     },
     {
       "degree": "Técnico en Informática",
-      "institution": "CECyTE Oaxaca, Plantel 17 Ayutla",
+      "institution": "Colegio de Estudios Científicos y Tecnológicos del Estado de Oaxaca, Plantel 17 Ayutla",
       "start": "2011",
       "end": "2014"
     }
   ],
-  "courses": ["Intermediate Python", "Intermediate SQL"],
-  "languages": ["Español — Nativo", "Inglés — Intermedio"]
+  "courses": [
+    "Intermediate Python",
+    "Intermediate SQL"
+  ],
+  "languages": [
+    "Español — Nativo",
+    "Inglés — Intermedio"
+  ]
 }
